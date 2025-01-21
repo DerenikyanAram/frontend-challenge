@@ -111,12 +111,17 @@ header button:hover {
   background-color: #007bff;
   height: 50px;
   align-items: center;
-  padding: 50px 0px;
+  width: 100vw;
+  padding: 60px 0px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
   margin: 0;
   box-sizing: border-box;
 }
-
-
+main {
+  margin-top: 150px;
+}
 .tab-selector button {
   background: transparent;
   color: white;
