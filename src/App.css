@@ -1,0 +1,148 @@
+/* Основные настройки */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Вкладки */
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #007bff;
+  padding: 10px 0;
+  color: white;
+}
+
+header button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header button.active {
+  background-color: white;
+  color: #007bff;
+  border-radius: 5px;
+}
+
+header button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #007bff;
+}
+
+/* Контейнер для карточек */
+.cat-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+
+/* Карточка котика */
+.cat-item {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cat-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.cat-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.heart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url('/heart-empty.svg'); /* Путь к файлу */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-image 0.3s ease;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+.heart.active {
+  background-image: url('/heart-filled.svg'); /* Путь к заполненному сердечку */
+}
+.loading-text {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #050000;
+  background-color: white;
+}
+
+.tab-selector {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #007bff;
+  height: 50px;
+  align-items: center;
+  padding: 50px 0px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.tab-selector button {
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  border: none;
+  padding: 0px 20px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
+}
+.tab-selector button.active {
+  background: rgba(0, 0, 0, 0.2); /* Полупрозрачное затемнение */
+  padding: 60px 10px;
+  font-weight: bold; /* Немного выделяем текст */
+  height: 100%; /* Высота кнопки строго соответствует контейнеру */
+}
+
+/* При наведении */
+.tab-selector button:hover {
+  background: rgba(0, 0, 0, 0.1); /* Лёгкое затемнение при наведении */
+}
+
